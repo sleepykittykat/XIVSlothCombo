@@ -62,8 +62,8 @@ namespace XIVSlothCombo.Combos.PvP
                 if (actionID is SpinningEdge or GustSlash or AeolianEdge)
                 {
                     var threeMudrasCD = GetCooldown(ThreeMudra);
-                    var fumaCD = GetCooldown(FumaShuriken);
                     var bunshinStacks = HasEffect(Buffs.Bunshin) ? GetBuffStacks(Buffs.Bunshin) : 0;
+                    var fumaCD = GetCooldown(FumaShuriken);
                     bool raijuLocked = HasEffect(Debuffs.SeakedForkedRaiju);
                     bool meisuiLocked = HasEffect(Debuffs.SealedMeisui);
                     bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
