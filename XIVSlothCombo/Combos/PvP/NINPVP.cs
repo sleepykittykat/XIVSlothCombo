@@ -79,22 +79,19 @@ namespace XIVSlothCombo.Combos.PvP
                     bool inMeisuiRange = threshold >= (remainingPercentage * 100);
 
 
-                    if (HasEffect(Buffs.Hidden))
+                     if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
 
-                    if (!GetCooldown(Bunshin).IsCooldown)
-                        return OriginalHook(Bunshin);
-
-                    if (threeMudrasCD.RemainingCharges > 0)
-                        return OriginalHook(ThreeMudra);
-
                     if (canWeave)
-                    {   
+                    {
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
 
-                        //if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
-                            //return OriginalHook(ThreeMudra);
+                        if (!GetCooldown(Bunshin).IsCooldown)
+                            return OriginalHook(Bunshin);
+
+                        if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
+                            return OriginalHook(ThreeMudra);
                     }
 
                     if (mudraMode)
@@ -107,8 +104,11 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (!raijuLocked)
                             return OriginalHook(ForkedRaiju);
+
+                        //if (!hutonLocked)
+                            //return OriginalHook(Huton);
                     }
-                    
+
                     if (fumaCD.RemainingCharges > 0)
                         return OriginalHook(FumaShuriken);
                 }
