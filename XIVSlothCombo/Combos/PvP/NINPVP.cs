@@ -11,12 +11,10 @@ namespace XIVSlothCombo.Combos.PvP
             SpinningEdge = 29500,
             GustSlash = 29501,
             AeolianEdge = 29502,
-            //FumaShuriken = 29505,
-            FumaShuriken = 29511
+            FumaShuriken = 29505,
             Mug = 29509,
             ThreeMudra = 29507,
-            //Bunshin = 29511,
-            Bunshin = 29505
+            Bunshin = 29511,
             Shukuchi = 29513,
             SeitonTenchu = 29515,
             ForkedRaiju = 29510,
@@ -88,9 +86,6 @@ namespace XIVSlothCombo.Combos.PvP
                     {
                         if (!GetCooldown(Bunshin).IsCooldown)
                             return OriginalHook(Bunshin);
-
-                        if (fumaCD.RemainingCharges > 0)
-                            return OriginalHook(FumaShuriken);
                         
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
@@ -109,10 +104,11 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (!raijuLocked && bunshinStacks > 0)
                             return OriginalHook(ForkedRaiju);
-
-                        if (!raijuLocked)
-                            return OriginalHook(ForkedRaiju);
                     }
+
+                    if (fumaCD.RemainingChares > 0)
+                        return OriginalHook(FumaShuriken);
+                    
                 }
 
                 return actionID;
