@@ -5,7 +5,7 @@
   "DalamudApiLevel": 9,
   "Punchline": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
   "Description": "Condenses combos and mutually exclusive abilities onto a single button - and then some.",
-  "RepoUrl": "https://github.com/Nik-Potokar/XIVSlothCombo",
-  "IconUrl": "https://raw.githubusercontent.com/Nik-Potokar/XIVSlothCombo/main/res/plugin/xivslothcombo.png",
+  "RepoUrl": "https://github.com/sleepykittykat/XIVSlothCombo",
+  "IconUrl": "https://raw.githubusercontent.com/sleepykittykat/XIVSlothCombo/main/res/plugin/xivslothcombo.png",
   "Changelog": "Please check the project's GitHub or Discord for a full changelog."
 }
