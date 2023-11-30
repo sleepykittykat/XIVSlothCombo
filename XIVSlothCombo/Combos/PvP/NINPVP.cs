@@ -11,10 +11,12 @@ namespace XIVSlothCombo.Combos.PvP
             SpinningEdge = 29500,
             GustSlash = 29501,
             AeolianEdge = 29502,
-            FumaShuriken = 29505,
+            //FumaShuriken = 29505,
+            FumaShuriken = 29511
             Mug = 29509,
             ThreeMudra = 29507,
-            Bunshin = 29511,
+            //Bunshin = 29511,
+            Bunshin = 29505
             Shukuchi = 29513,
             SeitonTenchu = 29515,
             ForkedRaiju = 29510,
