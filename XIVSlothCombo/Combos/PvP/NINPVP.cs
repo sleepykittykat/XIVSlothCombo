@@ -90,8 +90,8 @@ namespace XIVSlothCombo.Combos.PvP
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
 
-                        if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
-                            return OriginalHook(ThreeMudra);
+                        //if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
+                            //return OriginalHook(ThreeMudra);
                     }
 
                     if (mudraMode)
@@ -111,6 +111,9 @@ namespace XIVSlothCombo.Combos.PvP
 
                     if (fumaCD.RemainingChares > 0)
                         return OriginalHook(FumaShuriken);
+
+                    if (threeMudrasCD.RemainingCharges > 0)
+                        return OriginalHook(ThreeMudra);
                     
                 }
 
