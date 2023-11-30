@@ -104,6 +104,9 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (!raijuLocked && bunshinStacks > 0)
                             return OriginalHook(ForkedRaiju);
+
+                        if (!hutonLocked)
+                            return OriginalHook(ForkedRaiju);
                     }
 
                     if (fumaCD.RemainingChares > 0)
