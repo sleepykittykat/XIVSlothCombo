@@ -82,11 +82,14 @@ namespace XIVSlothCombo.Combos.PvP
                     if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
 
+                    if (!GetCooldown(Bunshin).IsCooldown)
+                        return OriginalHook(Bunshin);
+
+                    if (threeMudrasCD.RemainingCharges > 0)
+                        return OriginalHook(ThreeMudra);
+
                     if (canWeave)
-                    {
-                        if (!GetCooldown(Bunshin).IsCooldown)
-                            return OriginalHook(Bunshin);
-                        
+                    {   
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
 
@@ -105,9 +108,6 @@ namespace XIVSlothCombo.Combos.PvP
                         if (!raijuLocked)
                             return OriginalHook(ForkedRaiju);
                     }
-                   
-                    if (threeMudrasCD.RemainingCharges > 0)
-                        return OriginalHook(ThreeMudra);
                     
                     if (fumaCD.RemainingCharges > 0)
                         return OriginalHook(FumaShuriken);
