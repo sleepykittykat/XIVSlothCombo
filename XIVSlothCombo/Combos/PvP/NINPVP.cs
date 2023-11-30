@@ -64,13 +64,13 @@ namespace XIVSlothCombo.Combos.PvP
                     var bunshinStacks = HasEffect(Buffs.Bunshin) ? GetBuffStacks(Buffs.Bunshin) : 0;
                     var fumaCD = GetCooldown(FumaShuriken);
                     var threeMudrasCD = GetCooldown(ThreeMudra);
-                    //bool raijuLocked = HasEffect(Debuffs.SeakedForkedRaiju);
-                    //bool meisuiLocked = HasEffect(Debuffs.SealedMeisui);
-                    //bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
-                    //bool dotonLocked = HasEffect(Debuffs.SealedDoton);
-                    //bool gokaLocked = HasEffect(Debuffs.SealedGokaMekkyaku);
-                    //bool hutonLocked = HasEffect(Debuffs.SealedHuton);
-                    //bool mudraMode = HasEffect(Buffs.ThreeMudra);
+                    bool raijuLocked = HasEffect(Debuffs.SealedForkedRaiju);
+                    bool meisuiLocked = HasEffect(Debuffs.SealedMeisui);
+                    bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
+                    bool dotonLocked = HasEffect(Debuffs.SealedDoton);
+                    bool gokaLocked = HasEffect(Debuffs.SealedGokaMekkyaku);
+                    bool hutonLocked = HasEffect(Debuffs.SealedHuton);
+                    bool mudraMode = HasEffect(Buffs.ThreeMudra);
                     bool canWeave = CanWeave(SpinningEdge);
                     var jobMaxHp = LocalPlayer.MaxHp;
                     var threshold = GetOptionValue(Config.NINPvP_Meisui_ST);
@@ -94,7 +94,7 @@ namespace XIVSlothCombo.Combos.PvP
                             //return OriginalHook(ThreeMudra);
                     }
 
-                  /*  if (mudraMode)
+                    if (mudraMode)
                     {
                         if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
                             return OriginalHook(Meisui);
@@ -102,17 +102,14 @@ namespace XIVSlothCombo.Combos.PvP
                         if (!hyoshoLocked)
                             return OriginalHook(HyoshoRanryu);
 
-                        if (!raijuLocked && bunshinStacks > 0)
+                        if (!raijuLocked)
                             return OriginalHook(ForkedRaiju);
-
-                        if (!hutonLocked)
-                            return OriginalHook(ForkedRaiju);
-                   */ }
+                    }
                    
                     if (threeMudrasCD.RemainingCharges > 0)
                         return OriginalHook(ThreeMudra);
                     
-                    if (fumaCD.RemainingChares > 0)
+                    if (fumaCD.RemainingCharges > 0)
                         return OriginalHook(FumaShuriken);
                 }
 
