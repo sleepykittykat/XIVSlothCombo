@@ -108,13 +108,12 @@ namespace XIVSlothCombo.Combos.PvP
                         if (!hutonLocked)
                             return OriginalHook(ForkedRaiju);
                     }
-
-                    if (fumaCD.RemainingChares > 0)
-                        return OriginalHook(FumaShuriken);
-
+                   
                     if (threeMudrasCD.RemainingCharges > 0)
                         return OriginalHook(ThreeMudra);
                     
+                    if (fumaCD.RemainingChares > 0)
+                        return OriginalHook(FumaShuriken);
                 }
 
                 return actionID;
