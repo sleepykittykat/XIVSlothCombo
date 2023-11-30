@@ -94,7 +94,7 @@ namespace XIVSlothCombo.Combos.PvP
                             //return OriginalHook(ThreeMudra);
                     }
 
-                    if (mudraMode)
+                  /*  if (mudraMode)
                     {
                         if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
                             return OriginalHook(Meisui);
@@ -107,7 +107,7 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (!hutonLocked)
                             return OriginalHook(ForkedRaiju);
-                    }
+                   */ }
                    
                     if (threeMudrasCD.RemainingCharges > 0)
                         return OriginalHook(ThreeMudra);
