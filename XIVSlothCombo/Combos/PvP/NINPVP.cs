@@ -61,9 +61,9 @@ namespace XIVSlothCombo.Combos.PvP
             {
                 if (actionID is SpinningEdge or GustSlash or AeolianEdge)
                 {
-                    var threeMudrasCD = GetCooldown(ThreeMudra);
                     var bunshinStacks = HasEffect(Buffs.Bunshin) ? GetBuffStacks(Buffs.Bunshin) : 0;
                     var fumaCD = GetCooldown(FumaShuriken);
+                    var threeMudrasCD = GetCooldown(ThreeMudra);
                     bool raijuLocked = HasEffect(Debuffs.SeakedForkedRaiju);
                     bool meisuiLocked = HasEffect(Debuffs.SealedMeisui);
                     bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
@@ -86,6 +86,9 @@ namespace XIVSlothCombo.Combos.PvP
                     {
                         if (!GetCooldown(Bunshin).IsCooldown)
                             return OriginalHook(Bunshin);
+
+                        if (fumaCD.RemainingCharges > 0)
+                            return OriginalHook(FumaShuriken);
                         
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
@@ -108,10 +111,6 @@ namespace XIVSlothCombo.Combos.PvP
                         if (!raijuLocked)
                             return OriginalHook(ForkedRaiju);
                     }
-
-                    if (fumaCD.RemainingCharges > 0)
-                        return OriginalHook(FumaShuriken);
-
                 }
 
                 return actionID;
