@@ -82,16 +82,19 @@ namespace XIVSlothCombo.Combos.PvP
                      if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
 
+                     if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
+                        return OriginalHook(ThreeMudra);
+
                     if (canWeave)
                     {
+                        if (!GetCooldown(Bunshin).IsCooldown)
+                            return OriginalHook(Bunshin);
+                        
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
 
-                        if (!GetCooldown(Bunshin).IsCooldown)
-                            return OriginalHook(Bunshin);
-
-                        if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
-                            return OriginalHook(ThreeMudra);
+                        //if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
+                            //return OriginalHook(ThreeMudra);
                     }
 
                     if (mudraMode)
@@ -104,6 +107,9 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (!raijuLocked)
                             return OriginalHook(ForkedRaiju);
+
+                         if (!gokaLocked)
+                            return OriginalHook(GokaMekkyaku); 
 
                         //if (!hutonLocked)
                             //return OriginalHook(Huton);
