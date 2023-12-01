@@ -106,7 +106,7 @@ namespace XIVSlothCombo.Combos.PvP
                         if (!raijuLocked)
                             return OriginalHook(ForkedRaiju);
 
-                        if (!gokaLocked)
+                        if (!hutonLocked)
                             return OriginalHook(GokaMekkyaku);
                     }
                     
