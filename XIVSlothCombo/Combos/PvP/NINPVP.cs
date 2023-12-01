@@ -115,8 +115,6 @@ namespace XIVSlothCombo.Combos.PvP
                     if (fumaCD.RemainingCharges > 0)
                         return OriginalHook(FumaShuriken);
 
-                    if (!InMeleeRange() && threeMudrasCD.RemainingCharges > 0)
-                        return OriginalHook(threeMudra);
                 }
 
                 return actionID;
