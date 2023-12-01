@@ -82,9 +82,6 @@ namespace XIVSlothCombo.Combos.PvP
                      if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
 
-                     if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
-                        return OriginalHook(ThreeMudra);
-
                     if (canWeave)
                     {
                         if (!GetCooldown(Bunshin).IsCooldown)
@@ -93,8 +90,8 @@ namespace XIVSlothCombo.Combos.PvP
                         if (InMeleeRange() && !GetCooldown(Mug).IsCooldown)
                             return OriginalHook(Mug);
 
-                        //if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
-                            //return OriginalHook(ThreeMudra);
+                        if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
+                            return OriginalHook(ThreeMudra);
                     }
 
                     if (mudraMode)
@@ -117,6 +114,9 @@ namespace XIVSlothCombo.Combos.PvP
 
                     if (fumaCD.RemainingCharges > 0)
                         return OriginalHook(FumaShuriken);
+
+                    if (!InMeleeRange() && threeMudrasCD.RemainingCharges > 0)
+                        return OriginalHook(threeMudra);
                 }
 
                 return actionID;
