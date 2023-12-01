@@ -64,7 +64,7 @@ namespace XIVSlothCombo.Combos.PvP
                     var bunshinStacks = HasEffect(Buffs.Bunshin) ? GetBuffStacks(Buffs.Bunshin) : 0;
                     var fumaCD = GetCooldown(FumaShuriken);
                     var threeMudrasCD = GetCooldown(ThreeMudra);
-                    bool raijuLocked = HasEffect(Debuffs.SealedForkedRaiju);
+                    bool raijuLocked = HasEffect(Debuffs.SeakedForkedRaiju);
                     bool meisuiLocked = HasEffect(Debuffs.SealedMeisui);
                     bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
                     bool dotonLocked = HasEffect(Debuffs.SealedDoton);
