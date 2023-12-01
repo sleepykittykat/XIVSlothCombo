@@ -95,7 +95,7 @@ namespace XIVSlothCombo.Combos.PvP
 
                     }
 
-                    if (mudraMode)
+                   /* if (mudraMode)
                     {
                         if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
                             return OriginalHook(Meisui);
@@ -108,7 +108,7 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (!hutonLocked)
                             return OriginalHook(GokaMekkyaku);
-                    }
+                    }*/
                     
                     if (fumaCD.RemainingCharges > 0)
                         return OriginalHook(FumaShuriken);
