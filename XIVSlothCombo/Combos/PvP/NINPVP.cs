@@ -42,7 +42,7 @@ namespace XIVSlothCombo.Combos.PvP
                 SealedGokaMekkyaku = 3193,
                 SealedHuton = 3196,
                 SealedDoton = 3197,
-                SealedForkedRaiju = 3195,
+                SeakedForkedRaiju = 3195,
                 SealedMeisui = 3198;
         }
 
