@@ -105,7 +105,7 @@ namespace XIVSlothCombo.Combos.PvP
                        if (!raijuLocked && bunshinStacks > 0)
                            return OriginalHook(ForkedRaiju);
                        
-                       if (!gokaLocked && bunshinStacks == 0)
+                       if (!hutonLocked && bunshinStacks == 0)
                            return OriginalHook(GokaMekkyaku);
                     }
                     
