@@ -81,6 +81,9 @@ namespace XIVSlothCombo.Combos.PvP
 
                      if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
+                    
+                     if (!GetCooldown(Bunshin).IsCooldown)
+                         return OriginalHook(Bunshin);
 
                   /*  if (canWeave)
                     {
