@@ -97,29 +97,20 @@ namespace XIVSlothCombo.Combos.PvP
 
                    if (mudraMode)
                     {
-                        if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
-                            return OriginalHook(Meisui);
-
-                        if (!gokaLocked)
-                            return OriginalHook(GokaMekkyaku);
-
-                        if (gokaLocked)
-                            return OriginalHook(HyoshoRanryu);
+                       if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
+                           return OriginalHook(Meisui);
                        
-                        if (!hyoshoLocked)
-                            return OriginalHook(HyoshoRanryu);
-
-                        if (hyoshoLocked)
-                            return OriginalHook(GokaMekkyaku);
-
-                        if (!raijuLocked)
-                            return OriginalHook(ForkedRaiju);
-
-                        if (raijuLocked)
-                            return OriginalHook(HyoshoRanryu);
-
-                        //if (!hutonLocked)
-                            //return OriginalHook(SealedHuton);
+                       if (!gokaLocked)
+                           return OriginalHook(GokaMekkyaku);
+                       
+                       if (!hyoshoLocked)
+                           return OriginalHook(HyoshoRanryu);
+                       
+                       if (!raijuLocked)
+                           return OriginalHook(ForkedRaiju);
+                       
+                       //if (!hutonLocked)
+                           //return OriginalHook(SealedHuton);
                     }
                     
                     if (fumaCD.RemainingCharges > 0)
