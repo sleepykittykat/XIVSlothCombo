@@ -77,15 +77,12 @@ namespace XIVSlothCombo.Combos.PvP
                     var maxHPThreshold = jobMaxHp - 8000;
                     var remainingPercentage = (float)LocalPlayer.CurrentHp / (float)maxHPThreshold;
                     bool inMeisuiRange = threshold >= (remainingPercentage * 100);
-
-
-                     if (HasEffect(Buffs.Hidden))
+                    
+                    
+                    if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
                     
-                     if (!GetCooldown(Bunshin).IsCooldown)
-                         return OriginalHook(Bunshin);
-
-                  /*  if (canWeave)
+                    if (canWeave)
                     {
                         if (!GetCooldown(Bunshin).IsCooldown)
                             return OriginalHook(Bunshin);
@@ -95,29 +92,33 @@ namespace XIVSlothCombo.Combos.PvP
 
                         if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
                             return OriginalHook(ThreeMudra);
-
                     }
-
-                   if (mudraMode)
+                    
+                    if (mudraMode)
                     {
-                       if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
-                           return OriginalHook(Meisui);
-                       
-                       if (!gokaLocked)
-                           return OriginalHook(GokaMekkyaku);
-                       
-                       if (!hyoshoLocked)
+                        if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
+                            return OriginalHook(Meisui);
+                        
+                        if (!hyoshoLocked)
                            return OriginalHook(HyoshoRanryu);
                        
                        if (!raijuLocked)
                            return OriginalHook(ForkedRaiju);
                        
-                       //if (!hutonLocked)
-                           //return OriginalHook(SealedHuton);
+                       if (!gokaLocked)
+                           return OriginalHook(GokaMekkyaku);
                     }
                     
                     if (fumaCD.RemainingCharges > 0)
-                        return OriginalHook(FumaShuriken);*/
+                        return OriginalHook(FumaShuriken);
+
+                    if (!InMeleeRange())
+                    {
+                        if (fumaCD.RemainingCharges == 0)
+                            return OriginalHook(ThreeMudra);
+
+                        return OriginalHook(FumaShuriken);
+                    }
                     
                 }
 
