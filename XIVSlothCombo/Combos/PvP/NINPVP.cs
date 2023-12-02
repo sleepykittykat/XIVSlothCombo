@@ -114,13 +114,7 @@ namespace XIVSlothCombo.Combos.PvP
 
                     if (!InMeleeRange())
                     {
-                        if (lastComboActionID == GustSlash)
-                            return OriginalHook(ThreeMudra);
-                        
-                        if (lastComboActionID == SpinningEdge)
-                            return OriginalHook(ThreeMudra);
-
-                        if (lastComboActionID == AeolianEdge)
+                        if (threeMudrasCD.RemainingCharges > 0 && !mudraMode)
                             return OriginalHook(ThreeMudra);
 
                         return OriginalHook(FumaShuriken);
