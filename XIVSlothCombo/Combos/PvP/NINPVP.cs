@@ -82,7 +82,7 @@ namespace XIVSlothCombo.Combos.PvP
                      if (HasEffect(Buffs.Hidden))
                         return OriginalHook(Assassinate);
 
-                    if (canWeave)
+                  /*  if (canWeave)
                     {
                         if (!GetCooldown(Bunshin).IsCooldown)
                             return OriginalHook(Bunshin);
@@ -114,7 +114,7 @@ namespace XIVSlothCombo.Combos.PvP
                     }
                     
                     if (fumaCD.RemainingCharges > 0)
-                        return OriginalHook(FumaShuriken);
+                        return OriginalHook(FumaShuriken);*/
                     
                 }
 
