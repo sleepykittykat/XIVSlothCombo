@@ -69,7 +69,7 @@ namespace XIVSlothCombo.Combos.PvP
                     bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
                     bool dotonLocked = HasEffect(Debuffs.SealedDoton);
                     bool gokaLocked = HasEffect(Debuffs.SealedGokaMekkyaku);
-                    bool hutonLocked = HasEffect(Debuffs.SealedHuton);
+                    //bool hutonLocked = HasEffect(Debuffs.SealedHuton);
                     bool mudraMode = HasEffect(Buffs.ThreeMudra);
                     bool canWeave = CanWeave(SpinningEdge);
                     var jobMaxHp = LocalPlayer.MaxHp;
