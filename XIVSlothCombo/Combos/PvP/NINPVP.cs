@@ -64,11 +64,11 @@ namespace XIVSlothCombo.Combos.PvP
                     var bunshinStacks = HasEffect(Buffs.Bunshin) ? GetBuffStacks(Buffs.Bunshin) : 0;
                     var fumaCD = GetCooldown(FumaShuriken);
                     var threeMudrasCD = GetCooldown(ThreeMudra);
-                    bool raijuLocked = HasEffect(Debuffs.SeakedForkedRaiju);
+                    //bool raijuLocked = HasEffect(Debuffs.SeakedForkedRaiju);
                     bool meisuiLocked = HasEffect(Debuffs.SealedMeisui);
-                    bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
-                    bool dotonLocked = HasEffect(Debuffs.SealedDoton);
-                    bool gokaLocked = HasEffect(Debuffs.SealedGokaMekkyaku);
+                    //bool hyoshoLocked = HasEffect(Debuffs.SealedHyoshoRanryu);
+                    //bool dotonLocked = HasEffect(Debuffs.SealedDoton);
+                    //bool gokaLocked = HasEffect(Debuffs.SealedGokaMekkyaku);
                     //bool hutonLocked = HasEffect(Debuffs.SealedHuton);
                     bool mudraMode = HasEffect(Buffs.ThreeMudra);
                     bool canWeave = CanWeave(SpinningEdge);
@@ -99,14 +99,14 @@ namespace XIVSlothCombo.Combos.PvP
                         if (IsEnabled(CustomComboPreset.NINPvP_ST_Meisui) && inMeisuiRange && !meisuiLocked)
                             return OriginalHook(Meisui);
                         
-                        if (!hyoshoLocked)
+                        /*if (!hyoshoLocked)
                            return OriginalHook(HyoshoRanryu);
                        
                        if (!raijuLocked && bunshinStacks > 0)
                            return OriginalHook(ForkedRaiju);
                        
                        if (!gokaLocked && bunshinStacks == 0)
-                           return OriginalHook(GokaMekkyaku);
+                           return OriginalHook(GokaMekkyaku);*/
                     }
                     
                     if (fumaCD.RemainingCharges > 0)
